@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114863741968534338}
   m_Layer: 0
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Form
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ BoxCollider:
   m_GameObject: {fileID: 1524669804659506}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -110,7 +110,7 @@ BoxCollider:
   m_GameObject: {fileID: 1218203687715618}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 15, y: 3.5775661, z: 1}
   m_Center: {x: 0, y: -0.7587137, z: 0}
@@ -129,6 +129,8 @@ MonoBehaviour:
   CriticalPicture: 
   LastMove: 0
   lane: 0
+  PlayerPos: 0
+  position: 0
 --- !u!114 &114454814911441554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,11 +187,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f8b3bc57185ae047aecaa54d387febf, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.39215687, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

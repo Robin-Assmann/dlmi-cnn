@@ -19,8 +19,6 @@ public class TriggerPicture : MonoBehaviour {
 			p.StartInfo.Arguments = DLMI_Control.controller.scriptName +" "+ picture;
 
 			pro.p = p;
-			pro.s = gameObject;
-			pro.picture = picture;
 			pro.Start ();
 		}
 	}

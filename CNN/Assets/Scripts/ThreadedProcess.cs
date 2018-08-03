@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Thread Klasse für PythonProzess
 public class ThreadedProcess
 {
     private bool m_IsDone = false;
     private object m_Handle = new object();
     private System.Threading.Thread m_Thread = null;
-    public bool IsDone
-    {
-        get
-        {
+    public bool IsDone{
+        get{
             bool tmp;
             lock (m_Handle)
             {
@@ -18,8 +17,7 @@ public class ThreadedProcess
             }
             return tmp;
         }
-        set
-        {
+        set{
             lock (m_Handle)
             {
                 m_IsDone = value;
@@ -27,13 +25,12 @@ public class ThreadedProcess
         }
     }
 
-    public virtual void Start()
-    {
+    public virtual void Start(){
         m_Thread = new System.Threading.Thread(Run);
         m_Thread.Start();
     }
-    public virtual void Abort()
-    {
+
+    public virtual void Abort(){
         m_Thread.Abort();
     }
 
@@ -41,8 +38,7 @@ public class ThreadedProcess
 
 	protected virtual void OnFinished() { }
 
-    public virtual bool Update()
-    {
+    public virtual bool Update(){
         if (IsDone)
         {
             OnFinished();
@@ -50,15 +46,13 @@ public class ThreadedProcess
         }
         return false;
     }
-    public IEnumerator WaitFor()
-    {
+    public IEnumerator WaitFor(){
         while (!Update())
         {
             yield return null;
         }
     }
-    private void Run()
-    {
+    private void Run(){
         ThreadFunction();
         IsDone = true;
     }

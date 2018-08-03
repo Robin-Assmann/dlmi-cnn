@@ -6,12 +6,11 @@ using UnityEngine.Windows;
 using System.Threading;
 using System.Diagnostics;
 
+//Pythonprozess als Thread
 public class PythonProcess : ThreadedProcess
 {
-    public Process p;  // arbitary job data
-	public GameObject s;
-	public byte[] picture;
-    public string move; // arbitary job data
+    public Process p;
+    public string move;
 
     protected override void ThreadFunction()
     {
@@ -24,9 +23,7 @@ public class PythonProcess : ThreadedProcess
     }
     protected override void OnFinished()
     {
-        // This is executed by the Unity main thread when the job is finished
+       //Bewgung wird nach dem Prozess durchgeführt
 		Manager.manager.MovePlayer (int.Parse(move));
-		s.transform.parent.GetComponent<MoveObject> ().LastMove = int.Parse(move);
-		s.transform.parent.GetComponent<MoveObject> ().CriticalPicture = picture;
     }
 }
